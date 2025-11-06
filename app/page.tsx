@@ -10,7 +10,7 @@ export default function Home() {
 
   // Fiska POS screenshots
   const fiskaScreenshots = [
-    "/images/fiska-1.jpg", 
+    "/images/fiska-1.jpg",
     "/images/fiska-2.jpg",
     "/images/fiska-3.jpg",
     "/images/fiska-4.jpg"
@@ -78,7 +78,7 @@ export default function Home() {
 
       {/* NAVBAR */}
       <nav className="sticky top-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/10">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div className="container mx-auto max-w-7xl px-6 py-4 flex justify-between items-center">
           <a href="#hero" className="text-xl font-black text-white tracking-tighter hover:scale-110 transition-transform duration-300 relative group" style={{ letterSpacing: '-0.06em' }}>
             <span className="relative z-10">Denny<span className="text-white">.DEV</span></span>
             <span className="absolute inset-0 bg-white/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -134,8 +134,8 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 z-10">
-        <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
+      <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-32 px-6 md:px-8 lg:px-12 z-10">
+        <div className="container mx-auto max-w-7xl flex flex-col-reverse md:flex-row items-center gap-12 md:gap-16">
           <div className="md:w-7/12 flex flex-col items-start text-left space-y-6">
             <div className="overflow-hidden">
               <h2 className="text-white font-bold text-lg tracking-tight animate-slide-up" style={{ letterSpacing: '-0.04em' }}>
@@ -186,7 +186,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="tentang" className="relative py-24 px-6 z-10">
+      <section id="tentang" className="relative py-24 px-6 md:px-8 lg:px-12 z-10">
         <div className="container mx-auto max-w-5xl">
           <h2 className="flex items-center mb-12 text-3xl md:text-4xl font-black text-white" style={{ letterSpacing: '-0.06em' }}>
             <span className="text-gray-500 font-mono mr-4 text-2xl md:text-3xl">01.</span> 
@@ -220,7 +220,7 @@ export default function Home() {
       </section>
 
       {/* PROJECTS SECTION */}
-      <section id="proyek" className="relative py-24 px-6 z-10">
+      <section id="proyek" className="relative py-24 px-6 md:px-8 lg:px-12 z-10">
         <div className="container mx-auto max-w-6xl">
           <h2 className="flex items-center mb-16 text-3xl md:text-4xl font-black text-white" style={{ letterSpacing: '-0.06em' }}>
             <span className="text-gray-500 font-mono mr-4 text-2xl md:text-3xl">02.</span> 
@@ -248,23 +248,11 @@ export default function Home() {
                         idx === currentSlide ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
-                      {/* Carousel Images */}
-                      <div className="relative w-full h-full">
-                        {fiskaScreenshots.map((img, idx) => (
-                          <div
-                            key={idx}
-                            className={`absolute inset-0 transition-opacity duration-1000 ${
-                              idx === currentSlide ? 'opacity-100' : 'opacity-0'
-                            }`}
-                          >
-                            <img 
-                              src={img} 
-                              alt={`Fiska POS Screenshot ${idx + 1}`}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        ))}
-                      </div>
+                      <img 
+                        src={img} 
+                        alt={`Fiska POS Screenshot ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
@@ -327,9 +315,11 @@ export default function Home() {
                         idx === Math.floor(currentSlide * osheScreenshots.length / fiskaScreenshots.length) % osheScreenshots.length ? 'opacity-100' : 'opacity-0'
                       }`}
                     >
-                      <div className="flex h-full items-center justify-center text-gray-600 font-mono text-sm bg-zinc-800" style={{ letterSpacing: '-0.03em' }}>
-                        [Screenshot Web Oshe #{idx + 1}]
-                      </div>
+                      <img 
+                        src={img} 
+                        alt={`Oshe Coffee Screenshot ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   ))}
                 </div>
@@ -354,7 +344,7 @@ export default function Home() {
       </section>
 
       {/* EXPERIENCE SECTION */}
-      <section id="pengalaman" className="relative py-24 px-6 z-10">
+      <section id="pengalaman" className="relative py-24 px-6 md:px-8 lg:px-12 z-10">
         <div className="container mx-auto max-w-4xl">
           <h2 className="flex items-center mb-12 text-3xl md:text-4xl font-black text-white" style={{ letterSpacing: '-0.06em' }}>
             <span className="text-gray-500 font-mono mr-4 text-2xl md:text-3xl">03.</span> 
@@ -408,7 +398,7 @@ export default function Home() {
       </section>
 
       {/* SKILLS SECTION */}
-      <section id="keahlian" className="relative py-24 px-6 z-10">
+      <section id="keahlian" className="relative py-24 px-6 md:px-8 lg:px-12 z-10">
         <div className="container mx-auto max-w-6xl">
           <h2 className="flex items-center justify-center mb-16 text-3xl md:text-4xl font-black text-white" style={{ letterSpacing: '-0.06em' }}>
             <span className="text-gray-500 font-mono mr-4 text-2xl md:text-3xl">04.</span> 
@@ -443,7 +433,7 @@ export default function Home() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="kontak" className="relative py-32 px-6 text-center z-10">
+      <section id="kontak" className="relative py-32 px-6 md:px-8 lg:px-12 text-center z-10">
         <div className="container mx-auto max-w-3xl">
           <p className="text-white font-mono mb-4 tracking-widest text-sm font-bold" style={{ letterSpacing: '0.15em' }}>05. SELANJUTNYA?</p>
           <h2 className="text-5xl md:text-7xl font-black text-white mb-8 leading-none" style={{ letterSpacing: '-0.08em' }}>
@@ -470,12 +460,14 @@ export default function Home() {
 
       {/* FOOTER */}
       <footer className="relative py-8 text-center text-gray-500 font-mono text-xs border-t border-white/10 z-10">
-        <div className="space-y-2">
-          <p style={{ letterSpacing: '-0.03em' }}>
-            Dibuat dengan <span className="text-white font-bold">Next.js</span> & <span className="text-white font-bold">Tailwind CSS</span>
-          </p>
-          <p className="text-white font-bold" style={{ letterSpacing: '-0.04em' }}>Denny Hermawan</p>
-          <p className="opacity-60">© {new Date().getFullYear()}</p>
+        <div className="container mx-auto max-w-7xl px-6">
+          <div className="space-y-2">
+            <p style={{ letterSpacing: '-0.03em' }}>
+              Dibuat dengan <span className="text-white font-bold">Next.js</span> & <span className="text-white font-bold">Tailwind CSS</span>
+            </p>
+            <p className="text-white font-bold" style={{ letterSpacing: '-0.04em' }}>Denny Hermawan</p>
+            <p className="opacity-60">© {new Date().getFullYear()}</p>
+          </div>
         </div>
       </footer>
 
